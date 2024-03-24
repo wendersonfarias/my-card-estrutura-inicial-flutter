@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -13,61 +12,79 @@ class MeuApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.deepOrange,
         body: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    color: Colors.white,
-                    height: 100.0,
-                    width: 100.0,
-                  ),
-                  Container(
-                    color: Colors.white,
-                    height: 100.0,
-                    width: 100.0,
-                  )
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    alignment: Alignment.center,
-                    color: Colors.black,
-                    height: 150.0,
-                    width: 200.0,
-                    child: Center(
-                        child: Text(
-                      "Desafio Aula 15",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                  radius: 75.0,
+                  backgroundImage: AssetImage('imagens/minha-foto.jpg'),
+                ),
+                Text(
+                  "Wenderson P. Farias",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Pacifico',
+                      letterSpacing: 2.0),
+                ),
+                Text(
+                  "ESTUDANTE DE ENGENHARIA DA COMPUTAÇÃO",
+                  style: TextStyle(
+                      fontFamily: 'Source Sans Pro',
+                      color: Colors.deepOrange.shade100,
+                      fontSize: 11,
+                      letterSpacing: 1.8,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                    height: 20.0,
+                    width: 275,
+                    child: Divider(
+                      color: Colors.deepOrange.shade100,
                     )),
+                Card(
+                  margin: EdgeInsets.symmetric(
+                    vertical: 10.0,
+                    horizontal: 25.0,
                   ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    color: Colors.white,
-                    height: 100.0,
-                    width: 100.0,
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.phone,
+                      size: 20.0,
+                      color: Colors.deepOrange,
+                    ),
+                    title: Text(
+                      '(69) 99261-9192',
+                      style: TextStyle(
+                          color: Colors.deepOrange,
+                          fontSize: 16.0,
+                          fontFamily: 'Source Sans Pro'),
+                    ),
                   ),
-                  Container(
-                    color: Colors.white,
-                    height: 100.0,
-                    width: 100.0,
-                  )
-                ],
-              ),
-            ],
+                ),
+                Card(
+                  margin: EdgeInsets.symmetric(
+                    vertical: 10.0,
+                    horizontal: 25.0,
+                  ),
+                  child: ListTile(
+                    leading:
+                        Icon(Icons.email, size: 20.0, color: Colors.deepOrange),
+                    title: Text(
+                      'wendersonpfarias@gmail.com',
+                      style: TextStyle(
+                          color: Colors.deepOrange,
+                          fontSize: 15.0,
+                          fontFamily: 'Source Sans Pro'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
